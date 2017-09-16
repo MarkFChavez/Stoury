@@ -1,0 +1,54 @@
+{
+  "places": [
+    {
+      "id": 1,
+      "name": "Cebu itinerary for 5D2N",
+      "image": "https://cebuinformer.com/files/2017/02/c977b54e91eeba0c6b5fc94d3bdee301.jpg",
+      "author": "Mark Chavez",
+      "numberOfPax": 5,
+      "pricePerPax": 5600,
+      "numberOfDays": 3,
+      "numberOfNights": 2
+    },
+    {
+      "id": 2,
+      "name": "Kalanggaman Escapade with IBM friends for 7D6N",
+      "image": "https://i0.wp.com/outoftownblog.com/wp-content/uploads/2014/02/Kalanggaman-Islet-in-Leyte-600x398.jpg?resize=600%2C398",
+      "author": "Christopher Celestial",
+      "numberOfPax": 5,
+      "pricePerPax": 5600,
+      "numberOfDays": 3,
+      "numberOfNights": 2
+    },
+    {
+      "id": 3,
+      "name": "Taiwan in a Week",
+      "image": "https://i.pinimg.com/736x/7e/bd/02/7ebd02f5008073f5327b463992cd429a--taiwan-places-to-visit.jpg",
+      "author": "Billy Nicart",
+      "numberOfPax": 5,
+      "pricePerPax": 5600,
+      "numberOfDays": 3,
+      "numberOfNights": 2
+    },
+    {
+      "id": 4,
+      "name": "Singapore Beauty",
+      "image": "https://i.ytimg.com/vi/WYFe2-hqA2Q/maxresdefault.jpg",
+      "author": "Mark Chavez",
+      "numberOfPax": 5,
+      "pricePerPax": 5600,
+      "numberOfDays": 3,
+      "numberOfNights": 2
+    },
+    {
+      "id": 4,
+      "name": "Coron, Palawan - A Philippine Treasure",
+      "image": "https://www.journeyera.com/wp-content/uploads/2016/11/coron-palawan-image-04868.jpg",
+      "author": "Beverly Monungolh",
+      "numberOfPax": 5,
+      "pricePerPax": 5600,
+      "numberOfDays": 3,
+      "numberOfNights": 2
+    }
+  ]
+}
