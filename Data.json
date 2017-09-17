@@ -8,17 +8,19 @@
       "numberOfPax": 5,
       "pricePerPax": 5600,
       "numberOfDays": 3,
-      "numberOfNights": 2
+      "numberOfNights": 2,
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh."
     },
     {
       "id": 2,
       "name": "Kalanggaman Escapade with IBM friends for 7D6N",
       "image": "https://i0.wp.com/outoftownblog.com/wp-content/uploads/2014/02/Kalanggaman-Islet-in-Leyte-600x398.jpg?resize=600%2C398",
       "author": "Christopher Celestial",
-      "numberOfPax": 5,
-      "pricePerPax": 5600,
-      "numberOfDays": 3,
-      "numberOfNights": 2
+      "numberOfPax": 10,
+      "pricePerPax": 2000,
+      "numberOfDays": 2,
+      "numberOfNights": 1,
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh."
     },
     {
       "id": 3,
@@ -26,19 +28,21 @@
       "image": "https://i.pinimg.com/736x/7e/bd/02/7ebd02f5008073f5327b463992cd429a--taiwan-places-to-visit.jpg",
       "author": "Billy Nicart",
       "numberOfPax": 5,
-      "pricePerPax": 5600,
-      "numberOfDays": 3,
-      "numberOfNights": 2
+      "pricePerPax": 3800,
+      "numberOfDays": 4,
+      "numberOfNights": 3,
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh."
     },
     {
       "id": 4,
       "name": "Singapore Beauty",
       "image": "https://i.ytimg.com/vi/WYFe2-hqA2Q/maxresdefault.jpg",
       "author": "Mark Chavez",
-      "numberOfPax": 5,
-      "pricePerPax": 5600,
-      "numberOfDays": 3,
-      "numberOfNights": 2
+      "numberOfPax": 3,
+      "pricePerPax": 8000,
+      "numberOfDays": 7,
+      "numberOfNights": 6,
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh."
     },
     {
       "id": 4,
@@ -48,7 +52,15 @@
       "numberOfPax": 5,
       "pricePerPax": 5600,
       "numberOfDays": 3,
-      "numberOfNights": 2
+      "numberOfNights": 2,
+      "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh."
     }
-  ]
+  ],
+  "timeline": [
+      {"time": "09:00", "title": "Event 1", "description": "Event 1 Description"},
+      {"time": "10:45", "title": "Event 2", "description": "Event 2 Description"},
+      {"time": "12:00", "title": "Event 3", "description": "Event 3 Description"},
+      {"time": "14:00", "title": "Event 4", "description": "Event 4 Description"},
+      {"time": "16:30", "title": "Event 5", "description": "Event 5 Description"}
+    ]
 }

@@ -11,7 +11,7 @@ import data from '../../../Data.json';
 class CatalogScreen extends Component {
   static navigationOptions = {
     title: 'Explore',
-    headerTitleStyle: { fontFamily: 'Avenir Next' }
+    headerStyle: { backgroundColor: '#fff' }
   }
 
   setDataSource () {
@@ -35,58 +35,52 @@ class CatalogScreen extends Component {
   }
 
   renderRow (place) {
-    const { name, image, author } = place;
+    const { name, image, author, pricePerPax } = place;
 
     return (
-      <TouchableWithoutFeedback onPress={() => this.onButtonPress(place)}>
-        <View style={styles.container}>
-          <Image
-            style={styles.image}
-            source={{ uri: image }}
-          />
+      <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={() => this.onButtonPress(place)}>
+          <View style={{ padding: 10 }}>
+            <Image
+              style={styles.image}
+              source={{ uri: image }}
+            />
 
-          <View style={styles.textContainerStyle}>
-            <Text style={styles.placeTitle}> {name} </Text>
-            <Text style={{ fontFamily: 'Avenir Next', color: 'darkgray' }}> by {author} </Text>
+            <View style={styles.textContainerStyle}>
+              <Text style={styles.titleStyle}> {name} </Text>
+            </View>
           </View>
-        </View>
-      </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>
+      </View>
     )
   }
 
   render () {
     return (
-      <View>
-        <ListView
-          dataSource={this.dataSource}
-          renderRow={this.renderRow.bind(this)}
-        />
-      </View>
+      <ListView
+        dataSource={this.dataSource}
+        renderRow={this.renderRow.bind(this)}
+      />
     )
   }
 }
 
 const styles = {
   container: {
-    flex: 1,
-    marginBottom: 5,
-    paddingLeft: 5,
-    paddingRight: 5
+    backgroundColor: '#fff'
   },
 
   image: {
-    width: undefined,
     height: 300,
     flex: 1
   },
 
   textContainerStyle: {
     paddingTop: 5,
-    paddingBottom: 5,
-    alignItems: 'flex-start'
+    paddingBottom: 5
   },
 
-  placeTitle: {
+  titleStyle: {
     fontSize: 18,
     fontFamily: 'Avenir Next'
   }
