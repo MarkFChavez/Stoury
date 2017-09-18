@@ -4,8 +4,10 @@ import {
   Text,
   ListView,
   TouchableWithoutFeedback,
-  Image
+  Image,
+  Platform
 } from 'react-native';
+import _ from 'lodash';
 import data from '../../../Data.json';
 
 class CatalogScreen extends Component {
@@ -19,7 +21,11 @@ class CatalogScreen extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    this.dataSource = ds.cloneWithRows(data.places);
+    const placesArray = _.map(data.places, (value, key) => {
+      return value
+    });
+
+    this.dataSource = ds.cloneWithRows(placesArray);
   }
 
   constructor (props) {
@@ -82,7 +88,7 @@ const styles = {
 
   titleStyle: {
     fontSize: 18,
-    fontFamily: 'Avenir Next'
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   }
 }
 

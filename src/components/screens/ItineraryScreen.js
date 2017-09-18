@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, Image } from 'react-native';
+import { View, ScrollView, Text, Image, Platform } from 'react-native';
 import Timeline from 'react-native-timeline-listview';
-import data from '../../../Data.json'
+import _ from 'lodash';
+import data from '../../../Data.json';
 
 class ItineraryScreen extends Component {
   static navigationOptions = {
     title: 'Show',
     headerStyle: { backgroundColor: '#fff' }
+  }
+
+  renderTimeline (itinerary) {
+    const timelineArray = _.map(itinerary.timeline, (value, key) => {
+        return value;
+    });
+
+    return (
+      <View style={{ marginTop: 20, marginLeft: 20 }}>
+        <Timeline data={timelineArray} />
+      </View>
+    )
   }
 
   render () {
@@ -57,9 +70,7 @@ class ItineraryScreen extends Component {
           </View>
         </View>
 
-        <View style={{ marginTop: 20, marginLeft: 20 }}>
-          <Timeline data={data.timeline} />
-        </View>
+        {this.renderTimeline(itinerary)}
       </ScrollView>
     )
   }
@@ -93,24 +104,24 @@ const styles = {
     fontSize: 24,
     fontWeight: '600',
     textAlign: 'center',
-    fontFamily: 'Avenir Next'
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   },
 
   normalTextStyle: {
     fontSize: 18,
     fontWeight: '300',
-    fontFamily: 'Avenir Next'
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   },
 
   aboutHeaderStyle: {
     fontSize: 18,
     fontWeight: '500',
-    fontFamily: 'Avenir Next'
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   },
 
   aboutTextStyle: {
     textAlign: 'justify',
-    fontFamily: 'Avenir Next',
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto',
     fontSize: 16
   }
 }
