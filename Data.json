@@ -2,7 +2,7 @@
   "places": {
     "cebu-itinerary": {
       "id": 1,
-      "name": "Cebu itinerary for 5D2N",
+      "name": "South Cebu Itinerary",
       "image": "https://cebuinformer.com/files/2017/02/c977b54e91eeba0c6b5fc94d3bdee301.jpg",
       "author": "Mark Chavez",
       "numberOfPax": 5,
@@ -56,7 +56,7 @@
     },
     "singapore-itinerary": {
       "id": 4,
-      "name": "Singapore Beauty",
+      "name": "The Beauty of Singapore",
       "image": "https://i.ytimg.com/vi/WYFe2-hqA2Q/maxresdefault.jpg",
       "author": "Mark Chavez",
       "numberOfPax": 3,

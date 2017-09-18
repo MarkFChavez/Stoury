@@ -51,7 +51,7 @@ class CatalogScreen extends Component {
 
   renderRow (place) {
     const { name, image, author, pricePerPax } = place;
-    const { container, imageStyle, textContainerStyle, titleStyle } = styles;
+    const { container, imageStyle, textContainerStyle, titleStyle, subtitleStyle } = styles;
 
     return (
       <View style={container}>
@@ -63,7 +63,17 @@ class CatalogScreen extends Component {
             />
 
             <View style={textContainerStyle}>
-              <Text numberOfLines={1} ellipsizeMode={'tail'} style={titleStyle}> {name} </Text>
+              <Text
+                numberOfLines={1}
+                ellipsizeMode={'tail'}
+                style={titleStyle}>
+                {name}
+              </Text>
+
+              <Text
+                style={subtitleStyle}>
+                P{pricePerPax} / PAX
+              </Text>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -101,8 +111,13 @@ const styles = {
   },
 
   titleStyle: {
-    fontSize: 18,
-    fontWeight: '500',
+    fontSize: 17,
+    fontWeight: '600',
+    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+  },
+
+  subtitleStyle: {
+    fontSize: 15,
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   }
 }
