@@ -13,7 +13,16 @@ import data from '../../../Data.json';
 class CatalogScreen extends Component {
   static navigationOptions = {
     title: 'Explore',
-    headerStyle: { backgroundColor: '#fff' }
+    headerStyle: {
+      backgroundColor: '#fff',
+      borderBottomWidth: 1,
+      borderColor: 'midnightblue'
+    },
+    headerTitleStyle: {
+      fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto',
+      fontSize: 26,
+      fontWeight: '500'
+    }
   }
 
   setDataSource () {
@@ -42,18 +51,19 @@ class CatalogScreen extends Component {
 
   renderRow (place) {
     const { name, image, author, pricePerPax } = place;
+    const { container, imageStyle, textContainerStyle, titleStyle } = styles;
 
     return (
-      <View style={styles.container}>
+      <View style={container}>
         <TouchableWithoutFeedback onPress={() => this.onButtonPress(place)}>
-          <View style={{ padding: 10 }}>
+          <View>
             <Image
-              style={styles.image}
+              style={imageStyle}
               source={{ uri: image }}
             />
 
-            <View style={styles.textContainerStyle}>
-              <Text style={styles.titleStyle}> {name} </Text>
+            <View style={textContainerStyle}>
+              <Text numberOfLines={1} ellipsizeMode={'tail'} style={titleStyle}> {name} </Text>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -63,21 +73,25 @@ class CatalogScreen extends Component {
 
   render () {
     return (
-      <ListView
-        dataSource={this.dataSource}
-        renderRow={this.renderRow.bind(this)}
-      />
+      <View style={{ backgroundColor: '#fff' }}>
+        <ListView
+          dataSource={this.dataSource}
+          renderRow={this.renderRow.bind(this)}
+        />
+      </View>
     )
   }
 }
 
 const styles = {
   container: {
-    backgroundColor: '#fff'
+    marginTop: 15,
+    marginLeft: 20,
+    marginRight: 20
   },
 
-  image: {
-    height: 300,
+  imageStyle: {
+    height: 280,
     flex: 1
   },
 
@@ -88,6 +102,7 @@ const styles = {
 
   titleStyle: {
     fontSize: 18,
+    fontWeight: '500',
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   }
 }

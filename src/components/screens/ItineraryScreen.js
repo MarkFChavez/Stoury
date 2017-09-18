@@ -17,7 +17,11 @@ class ItineraryScreen extends Component {
 
     return (
       <View style={{ marginTop: 20, marginLeft: 20 }}>
-        <Timeline data={timelineArray} />
+        <Timeline
+          data={timelineArray}
+          timeContainerStyle={{ minWidth: 72 }}
+          innerCircle={'dot'}
+        />
       </View>
     )
   }
@@ -70,6 +74,10 @@ class ItineraryScreen extends Component {
           </View>
         </View>
 
+        <View style={{ marginTop: 20, marginLeft: 20 }}>
+          <Text style={aboutHeaderStyle}> Itinerary </Text>
+        </View>
+
         {this.renderTimeline(itinerary)}
       </ScrollView>
     )
@@ -114,7 +122,7 @@ const styles = {
   },
 
   aboutHeaderStyle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '500',
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   },

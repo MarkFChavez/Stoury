@@ -11,11 +11,11 @@
       "numberOfNights": 2,
       "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus erat ac nibh laoreet, ut blandit nunc luctus. Nunc cursus justo ac iaculis mollis. Nulla efficitur, nisl sagittis luctus imperdiet, lectus eros accumsan dui, sed luctus odio lectus id mi. Suspendisse porttitor eu enim sit amet mattis. Morbi fringilla quis ligula non interdum. In ut ultrices ipsum. Donec non nulla eget ex condimentum eleifend. Maecenas velit lectus, condimentum molestie nulla et, mattis egestas nibh.",
       "timeline": {
-        "Event 1": {"time": "09:00", "title": "Event 1", "description": "Event 1 Description"},
-        "Event 2": {"time": "10:45", "title": "Event 2", "description": "Event 2 Description"},
-        "Event 3": {"time": "12:00", "title": "Event 3", "description": "Event 3 Description"},
-        "Event 4": {"time": "14:00", "title": "Event 4", "description": "Event 4 Description"},
-        "Event 5": {"time": "16:30", "title": "Event 5", "description": "Event 5 Description"}
+        "Event 1": {"time": "09:00 am", "title": "Event 1"},
+        "Event 2": {"time": "10:45 am", "title": "Event 2"},
+        "Event 3": {"time": "12:00 pm", "title": "Event 3"},
+        "Event 4": {"time": "14:00 pm", "title": "Event 4"},
+        "Event 5": {"time": "16:30 pm", "title": "Event 5"}
       }
     },
     "kalanggaman-itinerary": {
