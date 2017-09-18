@@ -20,7 +20,7 @@
     },
     "kalanggaman-itinerary": {
       "id": 2,
-      "name": "Kalanggaman Escapade with IBM friends for 7D6N",
+      "name": "Kalanggaman Escapade",
       "image": "https://i0.wp.com/outoftownblog.com/wp-content/uploads/2014/02/Kalanggaman-Islet-in-Leyte-600x398.jpg?resize=600%2C398",
       "author": "Christopher Celestial",
       "numberOfPax": 10,
@@ -38,7 +38,7 @@
     },
     "taiwan-itinerary": {
       "id": 3,
-      "name": "Taiwan in a Week",
+      "name": "A Week in Taipei, Taiwan",
       "image": "https://i.pinimg.com/736x/7e/bd/02/7ebd02f5008073f5327b463992cd429a--taiwan-places-to-visit.jpg",
       "author": "Billy Nicart",
       "numberOfPax": 5,

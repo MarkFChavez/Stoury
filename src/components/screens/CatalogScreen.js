@@ -60,6 +60,7 @@ class CatalogScreen extends Component {
             <Image
               style={imageStyle}
               source={{ uri: image }}
+              defaultSource={require('./images/default-placeholder.png')}
             />
 
             <View style={textContainerStyle}>
