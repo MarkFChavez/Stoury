@@ -60,8 +60,8 @@ class CatalogScreen extends Component {
             />
 
             <View style={textContainerStyle}>
-              <Text style={titleStyle}> {name} </Text>
-              <Text style={subtitleStyle}> {location} • {masl} MASL </Text>
+              <Text style={titleStyle}> {name.toUpperCase()} </Text>
+              <Text style={subtitleStyle}> {location.toUpperCase()} • {masl} MASL </Text>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -95,15 +95,16 @@ const styles = {
 
   titleStyle: {
     alignSelf: 'flex-start',
-    fontSize: 20,
-    fontWeight: '500',
-    fontFamily: 'Avenir Next'
+    fontWeight: '700',
+    fontFamily: 'Avenir Next',
+    letterSpacing: 1
   },
 
   subtitleStyle: {
     alignSelf: 'flex-start',
-    fontSize: 15,
-    fontFamily: 'Avenir Next'
+    fontFamily: 'Avenir Next',
+    letterSpacing: 1,
+    fontSize: 12
   }
 }
 
