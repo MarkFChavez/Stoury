@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, Image, Platform, StatusBar, TouchableWithoutFeedback } from 'react-native';
-import Timeline from 'react-native-timeline-listview';
+import { View, Image } from 'react-native';
 import _ from 'lodash';
 
 class DetailScreen extends Component {
@@ -8,46 +7,21 @@ class DetailScreen extends Component {
     header: () => null
   }
 
-  renderTimeline (itinerary) {
-    const timelineArray = _.map(itinerary.timeline, (value, key) => {
-        return value;
-    });
-
-    return (
-      <View style={{ marginTop: 20, marginLeft: 20 }}>
-        <Text style={styles.aboutHeaderStyle}> Itinerary </Text>
-
-        <Timeline
-          data={timelineArray}
-          timeContainerStyle={{ minWidth: 72 }}
-          innerCircle={'dot'}
-        />
-      </View>
-    )
-  }
-
   render () {
     const { goBack, state } = this.props.navigation
-    const { itinerary } = state.params;
+    const { mountain } = state.params;
     const {
       containerStyle,
       imageStyle,
-      headerContainerStyle,
-      headerStyle,
-      detailStyle,
-      normalTextStyle,
-      aboutHeaderStyle,
-      aboutTextStyle,
       backButtonStyle
     } = styles;
 
     return (
       <ScrollView style={{ flex: 1 }}>
         <View style={containerStyle}>
-          <StatusBar hidden />
           <View>
             <Image
-              source={{ uri: itinerary.image }}
+              source={{ uri: mountain.image }}
               style={imageStyle}
             />
 
@@ -58,43 +32,6 @@ class DetailScreen extends Component {
                 </Text>
               </View>
             </TouchableWithoutFeedback>
-          </View>
-
-          <View style={headerContainerStyle}>
-            <Text style={headerStyle}> {itinerary.name} </Text>
-          </View>
-
-          <View style={detailStyle}>
-            <View style={{ marginTop: 10, marginBottom: 10 }}>
-              <Text style={normalTextStyle}> {itinerary.numberOfPax} PAX </Text>
-            </View>
-
-            <View style={{ marginTop: 10, marginBottom: 10 }}>
-              <Text style={normalTextStyle}> P{itinerary.pricePerPax} / PAX </Text>
-            </View>
-
-            <View style={{ marginTop: 10, marginBottom: 10 }}>
-              <Text style={normalTextStyle}> {itinerary.numberOfDays}D{itinerary.numberOfNights}N </Text>
-            </View>
-          </View>
-
-          <View style={{ marginTop: 20, marginLeft: 20 }}>
-            <Text style={aboutHeaderStyle}> About this Trip </Text>
-
-            <View style={{ marginTop: 10, paddingRight: 20 }}>
-              <Text style={aboutTextStyle}> {itinerary.about} </Text>
-            </View>
-          </View>
-
-          {/* {this.renderTimeline(itinerary)} */}
-
-          <View style={{ marginTop: 20, marginLeft: 20 }}>
-            <Text style={aboutHeaderStyle}> Contact Person/s: </Text>
-
-            <View style={{ marginTop: 10, paddingRight: 20 }}>
-              <Text style={aboutTextStyle}> Kuya Carding (0917-857-4111) </Text>
-              <Text style={aboutTextStyle}> Ate Cherry   (0919-396-3389) </Text>
-            </View>
           </View>
         </View>
       </ScrollView>
@@ -130,24 +67,24 @@ const styles = {
     fontSize: 24,
     fontWeight: '600',
     textAlign: 'center',
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+    fontFamily: 'Avenir Next'
   },
 
   normalTextStyle: {
     fontSize: 18,
     fontWeight: '300',
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+    fontFamily: 'Avenir Next'
   },
 
   aboutHeaderStyle: {
     fontSize: 20,
     fontWeight: '500',
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+    fontFamily: 'Avenir Next'
   },
 
   aboutTextStyle: {
     textAlign: 'justify',
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto',
+    fontFamily: 'Avenir Next',
     fontSize: 16
   },
 

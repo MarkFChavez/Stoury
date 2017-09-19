@@ -15,7 +15,7 @@ class CatalogScreen extends Component {
     title: '△ BUNDOK.PH',
     headerStyle: { backgroundColor: '#fff' },
     headerTitleStyle: {
-      fontWeight: '400',
+      fontWeight: '700',
       fontFamily: 'Avenir Next',
       letterSpacing: 1
     }
