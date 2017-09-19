@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text, Image, Platform, StatusBar, TouchableWithoutFeedback } from 'react-native';
 import Timeline from 'react-native-timeline-listview';
 import _ from 'lodash';
-import data from '../../../Data.json';
 
-class ItineraryScreen extends Component {
+class DetailScreen extends Component {
   static navigationOptions = {
     header: () => null
   }
@@ -160,4 +159,4 @@ const styles = {
   }
 }
 
-export default ItineraryScreen;
+export default DetailScreen;

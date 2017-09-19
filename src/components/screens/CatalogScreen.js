@@ -4,8 +4,7 @@ import {
   Text,
   ListView,
   TouchableWithoutFeedback,
-  Image,
-  Platform
+  Image
 } from 'react-native';
 import Card from '../common/Card'
 import _ from 'lodash';
@@ -13,9 +12,12 @@ import data from '../../../Mountains.json';
 
 class CatalogScreen extends Component {
   static navigationOptions = {
-    title: 'Bundok.ph',
-    headerStyle: {
-      backgroundColor: '#fff'
+    title: '△ BUNDOK.PH',
+    headerStyle: { backgroundColor: '#fff' },
+    headerTitleStyle: {
+      fontWeight: '400',
+      fontFamily: 'Avenir Next',
+      letterSpacing: 1
     }
   }
 
@@ -95,13 +97,13 @@ const styles = {
     alignSelf: 'flex-start',
     fontSize: 20,
     fontWeight: '500',
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+    fontFamily: 'Avenir Next'
   },
 
   subtitleStyle: {
     alignSelf: 'flex-start',
     fontSize: 15,
-    fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
+    fontFamily: 'Avenir Next'
   }
 }
 
