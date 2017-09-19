@@ -1,0 +1,29 @@
+{
+  "mountains": {
+    "Mt. Arayat": {
+      "location": "Pampanga, Luzon",
+      "image": "https://i.ytimg.com/vi/NXDg0XiG8ys/maxresdefault.jpg",
+      "masl": "1,026"
+    },
+    "Mt. Batulao": {
+      "location": "Nasugbu, Batangas",
+      "image": "https://beyondoutdooradventures.com/wp-content/uploads/2017/03/Mt-Batulao-Hiking-Tour-02.jpg",
+      "masl": "1,589"
+    },
+    "Mt. Binacayan": {
+      "location": "Rodriguez, Rizal",
+      "image": "https://twomonkeystravelgroup.com/wp-content/uploads/2015/12/Sea-of-clouds-Photo-with-caption.jpg",
+      "masl": "678"
+    },
+    "Mt. Guiting Guiting": {
+      "location": "Romblon, Visayas",
+      "image": "https://i2.wp.com/i1284.photobucket.com/albums/a569/AdrenalineRomance/Guiting-guiting/G2%20Part%202/DSCN7964_zpsmgeujnjr.jpg",
+      "masl": "2,897"
+    },
+    "Mt. Pinatubo": {
+      "location": "Zambales, Tarlac",
+      "image": "https://i0.wp.com/outoftownblog.com/wp-content/uploads/2015/03/Mt-Pinatubo-Hiking-Tour-photo-by-Monggoy-via-Flickr.jpg?fit=1024%2C683&ssl=1",
+      "masl": "1486"
+    }
+  }
+}

@@ -5,16 +5,15 @@ import {
   ListView,
   TouchableWithoutFeedback,
   Image,
-  Platform,
-  StatusBar
+  Platform
 } from 'react-native';
 import Card from '../common/Card'
 import _ from 'lodash';
-import data from '../../../Data.json';
+import data from '../../../Mountains.json';
 
 class CatalogScreen extends Component {
   static navigationOptions = {
-    title: 'Explore',
+    title: 'Bundok.ph',
     headerStyle: {
       backgroundColor: '#fff'
     }
@@ -25,11 +24,11 @@ class CatalogScreen extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    const placesArray = _.map(data.places, (value, key) => {
-      return value
+    const mountainsArray = _.map(data.mountains, (value, key) => {
+      return { ...value, name: key }
     });
 
-    this.dataSource = ds.cloneWithRows(placesArray);
+    this.dataSource = ds.cloneWithRows(mountainsArray);
   }
 
   constructor (props) {
@@ -37,20 +36,20 @@ class CatalogScreen extends Component {
     this.setDataSource();
   }
 
-  onButtonPress (place) {
+  onButtonPress (mountain) {
     const { navigation } = this.props;
 
     // go to ItineraryScreen
-    navigation.navigate('itinerary', { itinerary: place });
+    // navigation.navigate('itinerary', { itinerary: mountain });
   }
 
-  renderRow (place) {
-    const { name, image, author, pricePerPax } = place;
+  renderRow (mountain) {
+    const { name, location, image, masl  } = mountain;
     const { container, imageStyle, textContainerStyle, titleStyle, subtitleStyle } = styles;
 
     return (
       <Card>
-        <TouchableWithoutFeedback onPress={() => this.onButtonPress(place)}>
+        <TouchableWithoutFeedback onPress={() => this.onButtonPress(mountain)}>
           <View>
             <Image
               style={imageStyle}
@@ -59,17 +58,8 @@ class CatalogScreen extends Component {
             />
 
             <View style={textContainerStyle}>
-              <Text
-                numberOfLines={1}
-                ellipsizeMode={'tail'}
-                style={titleStyle}>
-                {name}
-              </Text>
-
-              <Text
-                style={subtitleStyle}>
-                P{pricePerPax} / PAX
-              </Text>
+              <Text style={titleStyle}> {name} </Text>
+              <Text style={subtitleStyle}> {location} • {masl} MASL </Text>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -80,7 +70,6 @@ class CatalogScreen extends Component {
   render () {
     return (
       <View style={{ backgroundColor: '#fff' }}>
-        <StatusBar hidden={false} />
         <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow.bind(this)}
@@ -97,16 +86,20 @@ const styles = {
   },
 
   textContainerStyle: {
-    padding: 10
+    paddingTop: 10,
+    paddingRight: 10,
+    paddingBottom: 10
   },
 
   titleStyle: {
-    fontSize: 17,
-    fontWeight: '600',
+    alignSelf: 'flex-start',
+    fontSize: 20,
+    fontWeight: '500',
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   },
 
   subtitleStyle: {
+    alignSelf: 'flex-start',
     fontSize: 15,
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto'
   }
