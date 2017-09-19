@@ -5,8 +5,10 @@ import {
   ListView,
   TouchableWithoutFeedback,
   Image,
-  Platform
+  Platform,
+  StatusBar
 } from 'react-native';
+import Card from '../common/Card'
 import _ from 'lodash';
 import data from '../../../Data.json';
 
@@ -14,14 +16,7 @@ class CatalogScreen extends Component {
   static navigationOptions = {
     title: 'Explore',
     headerStyle: {
-      backgroundColor: '#fff',
-      borderBottomWidth: 1,
-      borderColor: 'midnightblue'
-    },
-    headerTitleStyle: {
-      fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto',
-      fontSize: 26,
-      fontWeight: '500'
+      backgroundColor: '#fff'
     }
   }
 
@@ -54,7 +49,7 @@ class CatalogScreen extends Component {
     const { container, imageStyle, textContainerStyle, titleStyle, subtitleStyle } = styles;
 
     return (
-      <View style={container}>
+      <Card>
         <TouchableWithoutFeedback onPress={() => this.onButtonPress(place)}>
           <View>
             <Image
@@ -78,13 +73,14 @@ class CatalogScreen extends Component {
             </View>
           </View>
         </TouchableWithoutFeedback>
-      </View>
+      </Card>
     )
   }
 
   render () {
     return (
       <View style={{ backgroundColor: '#fff' }}>
+        <StatusBar hidden={false} />
         <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow.bind(this)}
@@ -95,20 +91,13 @@ class CatalogScreen extends Component {
 }
 
 const styles = {
-  container: {
-    marginTop: 15,
-    marginLeft: 20,
-    marginRight: 20
-  },
-
   imageStyle: {
     height: 280,
     flex: 1
   },
 
   textContainerStyle: {
-    paddingTop: 5,
-    paddingBottom: 5
+    padding: 10
   },
 
   titleStyle: {

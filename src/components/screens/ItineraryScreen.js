@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, Image, Platform } from 'react-native';
+import { View, ScrollView, Text, Image, Platform, StatusBar, TouchableWithoutFeedback } from 'react-native';
 import Timeline from 'react-native-timeline-listview';
 import _ from 'lodash';
 import data from '../../../Data.json';
 
 class ItineraryScreen extends Component {
   static navigationOptions = {
-    title: 'Show',
-    headerStyle: { backgroundColor: '#fff' }
+    header: () => null
   }
 
   renderTimeline (itinerary) {
@@ -17,6 +16,8 @@ class ItineraryScreen extends Component {
 
     return (
       <View style={{ marginTop: 20, marginLeft: 20 }}>
+        <Text style={styles.aboutHeaderStyle}> Itinerary </Text>
+
         <Timeline
           data={timelineArray}
           timeContainerStyle={{ minWidth: 72 }}
@@ -27,7 +28,8 @@ class ItineraryScreen extends Component {
   }
 
   render () {
-    const { itinerary } = this.props.navigation.state.params;
+    const { goBack, state } = this.props.navigation
+    const { itinerary } = state.params;
     const {
       containerStyle,
       imageStyle,
@@ -36,49 +38,66 @@ class ItineraryScreen extends Component {
       detailStyle,
       normalTextStyle,
       aboutHeaderStyle,
-      aboutTextStyle
+      aboutTextStyle,
+      backButtonStyle
     } = styles;
 
     return (
-      <ScrollView style={containerStyle}>
-        <View>
-          <Image
-            source={{ uri: itinerary.image }}
-            style={imageStyle}
-          />
-        </View>
+      <ScrollView style={{ flex: 1 }}>
+        <View style={containerStyle}>
+          <StatusBar hidden />
+          <View>
+            <Image
+              source={{ uri: itinerary.image }}
+              style={imageStyle}
+            />
 
-        <View style={headerContainerStyle}>
-          <Text style={headerStyle}> {itinerary.name} </Text>
-        </View>
-
-        <View style={detailStyle}>
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Text style={normalTextStyle}> {itinerary.numberOfPax} PAX </Text>
+            <TouchableWithoutFeedback onPress={() => goBack()}>
+              <View style={{ position: 'absolute', top: 20, left: 20, backgroundColor: 'transparent' }}>
+                <Text style={backButtonStyle}>
+                  &lt;
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Text style={normalTextStyle}> P{itinerary.pricePerPax} / PAX </Text>
+          <View style={headerContainerStyle}>
+            <Text style={headerStyle}> {itinerary.name} </Text>
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Text style={normalTextStyle}> {itinerary.numberOfDays}D{itinerary.numberOfNights}N </Text>
+          <View style={detailStyle}>
+            <View style={{ marginTop: 10, marginBottom: 10 }}>
+              <Text style={normalTextStyle}> {itinerary.numberOfPax} PAX </Text>
+            </View>
+
+            <View style={{ marginTop: 10, marginBottom: 10 }}>
+              <Text style={normalTextStyle}> P{itinerary.pricePerPax} / PAX </Text>
+            </View>
+
+            <View style={{ marginTop: 10, marginBottom: 10 }}>
+              <Text style={normalTextStyle}> {itinerary.numberOfDays}D{itinerary.numberOfNights}N </Text>
+            </View>
+          </View>
+
+          <View style={{ marginTop: 20, marginLeft: 20 }}>
+            <Text style={aboutHeaderStyle}> About this Trip </Text>
+
+            <View style={{ marginTop: 10, paddingRight: 20 }}>
+              <Text style={aboutTextStyle}> {itinerary.about} </Text>
+            </View>
+          </View>
+
+          {/* {this.renderTimeline(itinerary)} */}
+
+          <View style={{ marginTop: 20, marginLeft: 20 }}>
+            <Text style={aboutHeaderStyle}> Contact Person/s: </Text>
+
+            <View style={{ marginTop: 10, paddingRight: 20 }}>
+              <Text style={aboutTextStyle}> Kuya Carding (0917-857-4111) </Text>
+              <Text style={aboutTextStyle}> Ate Cherry   (0919-396-3389) </Text>
+            </View>
           </View>
         </View>
-
-        <View style={{ marginTop: 20, marginLeft: 20 }}>
-          <Text style={aboutHeaderStyle}> About this Trip </Text>
-
-          <View style={{ marginTop: 10, paddingRight: 20 }}>
-            <Text style={aboutTextStyle}> {itinerary.about} </Text>
-          </View>
-        </View>
-
-        <View style={{ marginTop: 20, marginLeft: 20 }}>
-          <Text style={aboutHeaderStyle}> Itinerary </Text>
-        </View>
-
-        {this.renderTimeline(itinerary)}
       </ScrollView>
     )
   }
@@ -86,8 +105,8 @@ class ItineraryScreen extends Component {
 
 const styles = {
   containerStyle: {
-    flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingBottom: 10
   },
 
   imageStyle: {
@@ -131,6 +150,13 @@ const styles = {
     textAlign: 'justify',
     fontFamily: (Platform.OS === 'ios') ? 'Avenir Next' : 'Roboto',
     fontSize: 16
+  },
+
+  backButtonStyle: {
+    fontSize: 36,
+    color: '#fff',
+    fontWeight: '500',
+    letterSpacing: 1
   }
 }
 
