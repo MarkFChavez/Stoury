@@ -18,7 +18,8 @@ class CatalogScreen extends Component {
       fontWeight: '700',
       fontFamily: 'Avenir Next',
       letterSpacing: 1
-    }
+    },
+    headerRight: <Text style={{ marginRight: 10, fontSize: 12 }}> SEARCH </Text>
   }
 
   setDataSource () {
